@@ -1,0 +1,272 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: "bedross";
+    src: url(bedross-font/bedross-italic.ttf);
+}
+
+body{
+    background-color: #1f242d;
+    color: aliceblue;
+}
+.container {
+  width: 100%;
+    margin: 0 auto;
+    padding: 0 0.5rem;
+
+}
+header{
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: bedross;
+}
+.navbar{
+
+      position: sticky;
+        display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 25px 9%;
+    z-index: 1000;
+}
+i{
+    font-size: 2rem;
+}
+nav{
+    display: flex;
+    gap: 1rem;
+}
+.logo{
+    font-size: 2rem;
+}
+ul{
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    gap: 1.5rem;
+    font-size: 1rem;
+}
+li a{
+    text-decoration: none;
+    color: aliceblue;
+    transition: .5s;
+}
+nav ul li:hover a, 
+nav ul li.active a,
+nav ul li:active a
+{
+color: #7cf03d;
+}
+main{
+   padding: 3rem; 
+   height: 80vh;
+ 
+   display: flex;
+   flex-wrap: wrap;
+   gap: 2rem;
+     align-items: center;
+     justify-content: center;
+
+}
+.content{
+    text-align: left;
+    padding: 0px 3rem;
+    align-items: center;
+}
+.content h2 span{
+    display: inline-block;
+    color: transparent;
+    -webkit-text-stroke:.7px #7cf03d;
+    animation: displaytext 12s linear infinite;
+    animation-delay: calc(-4s * var(--i));
+    position: relative;
+}
+@keyframes displaytext{
+    25%,100%{
+        display: none;
+
+    }
+}
+
+.content h2 span::before{
+    content: attr(data-text);
+    position: absolute;
+    width: 0;
+    border-right: 2px solid #7cf03d;
+    color: #7cf03d;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: filltext 4s linear infinite;
+}
+@keyframes filltext{
+    10%, 100% {
+        width: 0;
+    }
+     70%, 90% {
+        width: 100%;
+    }
+}
+
+.content p{
+    max-width: 600px;
+    text-align: left;
+    margin: auto;
+    line-height: 1.5;
+    
+}
+.content h1{
+font-size: 4rem;
+}
+.content h2{
+font-size: 2rem;
+margin-top: 10px;
+margin-bottom: 5px;
+display: inline-block;
+}
+.btn{
+    display: flex;
+    gap: 2rem;
+    margin-top: 15px;
+}
+.btn button:nth-of-type(1){
+    display: inline-block;
+    padding: 10px 30px;
+    background: #7cf03d;
+    border: 2px solid #7cf03d;
+    border-radius: 40px;
+    box-shadow:0 0 10px #7cf03d;
+}
+
+.btn button:nth-of-type(2){
+    display: inline-block;
+    padding: 10px 30px;
+    background: transparent;
+    border: 2px solid #7cf03d;
+    border-radius: 40px;
+
+}
+.btn button:nth-of-type(2) a
+{
+    color: aliceblue;
+    text-decoration: none;
+}
+.btn button:nth-of-type(1) a{
+    color:black;
+    text-decoration: none;
+
+}
+.home-image{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem;
+}
+.img-box{
+    width: 25rem;
+    height: 25rem;
+    border-radius: 50%;
+
+    padding: 5px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+}
+.img-box::before,.img-box::after {
+    content: "";
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background:conic-gradient(transparent, transparent, transparent, #7cf03d);
+transform: rotate(0deg);
+animation: rotateborder 10s linear infinite;
+}
+.img-box::after{
+animation-delay: -5s;
+}
+@keyframes rotateborder{
+    100%{ transform: rotate(360deg);
+
+    }
+}
+.img-item{
+    width: 100%;
+    height: 100%;
+    background: #1f242d;
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    z-index: 1;
+}
+img{
+    position: absolute;
+    width: 100%;
+    object-fit: cover;
+    top: 30px;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* @media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+    
+  }
+}
+
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1320px;
+    
+  }
+} */
